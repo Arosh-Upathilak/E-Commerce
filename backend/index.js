@@ -7,6 +7,7 @@ import helmet from 'helmet';
 dotenv.config()
 
 import connectDB from './config/connectDB.js';
+import userRouter from './route/user.route.js';
 
 const app =express()
 //Middleware Setup
@@ -29,6 +30,8 @@ app.get("/",(request,response)=>{
         message : "Server is running 8080"
     })
 })
+
+app.use('/api/user',userRouter)
 
 connectDB().then(()=>{
     app.listen(PORT,()=>{

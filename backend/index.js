@@ -31,6 +31,8 @@ app.get("/",(request,response)=>{
     })
 })
 
+
+//thi API call for the server connect
 app.use('/api/user',userRouter)
 
 connectDB().then(()=>{
